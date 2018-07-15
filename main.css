@@ -1,0 +1,70 @@
+.bodyDiv 
+{
+  background-color: #DCDCDC;
+  margin: 0px;
+  padding: 0px;
+}
+
+hr 
+{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #000000;
+  margin: 0.8em 0;
+  padding: 0;
+}
+
+th, td 
+{
+  padding: 3px;
+  text-align: center;
+}
+
+table, th, td 
+{
+  border-collapse: collapse;
+}
+
+.toolbar-header 
+{
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.clearBtn 
+{
+  background-color: #000000;
+  color: #FFFFFF;
+  float: left;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 15px;
+  width: 100px;
+  margin: 0px 40px;
+}
+
+.editor-label-text
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:   14px;
+    font-weight: bold;
+}
+
+.fileUploadBtn 
+{
+  background-color: #000FFF;
+  color: #FFFFFF;
+  float: left;
+  padding: 10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 15px;
+  width: 100px;
+  margin: 0px 40px;
+}

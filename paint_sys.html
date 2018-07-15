@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body class="bodyDiv" >
+    <div id="toolbar" style="width:200px; text-align:center;">
+      <table style="width:95%">
+        <tr><th><label class="toolbar-header">Toolbar</label><hr/></th></tr>
+        <tr>
+        <td >
+          <label class="editor-label-text" for="colourDropDown">Stroke Color:</label>
+          <select id="colourDropDown">
+            <option value="blue">Blue</option>
+            <option value="#ff00ff">Fuschia</option>
+            <option value="#008000">Green</option>
+            <option value="red">Red</option>
+            <option value="white">White</option>
+            <option value="yellow">Yellow</option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+          <td><input type="button" id="clear" value="Clear" class="clearBtn"></td>
+        </tr>
+        <!--
+        <tr>
+          <td>
+            <input id="fileInput" type="file" style="display:none;" />
+            <input type="button" class="fileUploadBtn" value="Choose File" onclick="document.getElementById('fileInput').click();" />
+          </td>
+        </tr>
+        -->
+      </table>
+    </div>
+    <!-- drawing area -->
+    <div id="paint">
+      <canvas id="myCanvas" style="border:1px solid #000000;"/>
+    </div>
+    <script src="canvas.js"></script>
+    <script src="events.js"></script>
+    <script>
+      var canvas = initCanvas();
+      var ctx = initCanvasContext(canvas);
+      registerEvents();
+      onPaint();
+    </script>
+  </body>
+</html>
