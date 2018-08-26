@@ -17,8 +17,12 @@ function registerEvents(){
   }, false);
 }
 
+var mouseUp = 0, mouseDown = 0;
+
 function initCanvas() {
   var canvas = document.getElementById('myCanvas');
+  canvas.style.cursor = "crosshair";
+
   canvas.style.left = "200px";
   canvas.style.top = "3px";
   canvas.style.position = "absolute";
@@ -26,7 +30,35 @@ function initCanvas() {
   canvas.height = 580;
   canvas.fillStyle = "#FFFFFF";
 
+  canvas.addEventListener('mousedown', tapDown, false);
+  canvas.addEventListener('mouseup', tapUp, false);
+  canvas.addEventListener('mousemove', tapAndMove, false);
+  
   return canvas;
+}
+
+function tapDown() {
+  mouseDown = 1;
+  drawDot(ctx, mouse.x, mouse.y, strokeThickness);
+}
+
+function tapUp() {
+  mouseDown = 0;
+}
+
+function tapAndMove(e) {
+  // if (mouseDown == 1) {
+    // drawDot(ctx, mouse.x, mouse.y, strokeThickness);
+  // }
+}
+
+function drawDot(ctx, x, y, size) {
+  ctx.fillStyle = colorSelected;
+
+  ctx.beginPath();
+  ctx.arc(x, y, size * 0.5, 0, Math.PI * 2, true);
+  ctx.closePath();
+  ctx.fill();
 }
 
 function initStrokeColor(color) {
@@ -34,9 +66,9 @@ function initStrokeColor(color) {
   ctx.strokeStyle = colorSelected;
 }
 
-function initStrokeThickness() {
+function initStrokeThickness(markerThickness) {
   var ctx = canvas.getContext('2d');
-  ctx.lineWidth = strokeThickness;
+  ctx.lineWidth = markerThickness;
 }
 
 function initCanvasContext(canvas) {

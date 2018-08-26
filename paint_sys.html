@@ -24,6 +24,9 @@
         <p/>
         <tr><th><label class="toolbar-header">Menu</label><hr/></th></tr>
         <tr>
+          <td><input type="button" id="erase" value="Erase" class="menuBtn"></td>
+        </tr>
+        <tr>
           <td><input type="button" id="clear" value="Clear" class="menuBtn"></td>
         </tr>
         <tr>
@@ -31,10 +34,18 @@
         </tr>
         <tr>
           <td>
-            <label class="label">Stroke Thickness</label>: 
-            <input type="number" id="strokeSize" class="inputNum" value=5 min=1>
+            <label class="label">Stroke Size: </label> 
+            <input type="number" id="strokeSize" class="inputNum" value=5 min=1 max=12>
           </td>
         </tr>
+        <tr>
+          <td>
+            <label class="label">Eraser Size: </label> 
+            <input type="number" id="eraserSize" class="inputNum" value=1 min=1 max=12>
+          </td>
+        </tr>
+        
+        
         <tr>
           <td>
             <center>

@@ -7,11 +7,9 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-
 function openModal() {
   modal.style.display = "block";
 }
-
 
 modalNo.addEventListener('click', function() {
   closeModal();
@@ -20,8 +18,9 @@ modalNo.addEventListener('click', function() {
 
 modalYes.addEventListener('click', function() {
   closeModal();
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "#FFFFFF";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 }, false);
 
 
