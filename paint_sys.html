@@ -2,26 +2,53 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="ColourPalette.css">
+    <link rel="stylesheet" type="text/css" href="modal.css">
+    <title>Paint System</title>
   </head>
-  <body class="bodyDiv" >
+  
+  <body class="bodyDiv">
+    <!-- Clear Modal -->
+    <div id="clearModal" class="modal">
+      <div class="modal-content">
+        <p/><center>Delete all changes?</center><p/>
+        <center>
+          <input type="button" id="clearYes" value="Yes" class="menuBtn">   
+          <input type="button" id="clearNo" value="No" class="menuBtn">
+        </center>
+      </div>
+    </div>
+  
     <div id="toolbar" style="width:200px; text-align:center;">
-      <table style="width:95%">
+      <table style="width:85%">
+        <p/>
         <tr><th><label class="toolbar-header">Toolbar</label><hr/></th></tr>
         <tr>
-        <td >
-          <label class="editor-label-text" for="colourDropDown">Stroke Color:</label>
-          <select id="colourDropDown">
-            <option value="blue">Blue</option>
-            <option value="#ff00ff">Fuschia</option>
-            <option value="#008000">Green</option>
-            <option value="red">Red</option>
-            <option value="white">White</option>
-            <option value="yellow">Yellow</option>
-          </select>
-        </td>
+          <td>
+            <center>
+            <table id="colorTable">
+              <tr>
+                <td><div id="black" class="square black"></div></td>
+                <td><div id="blue" class="square blue"></div></td>
+                <td><div id="#ff00ff" class="square fuschia"></div></td>
+                <td><div id="#008000" class="square green"></div></td>
+                <td><div id="red" class="square red"></div></td>
+                <td><div id="yellow" class="square yellow"></div></td>
+              </tr>
+              <!-- <tr> -->
+                <!-- <td><div id="#008000" class="square green"></div></td> -->
+                <!-- <td><div id="red" class="square red"></div></td> -->
+                <!-- <td><div id="yellow" class="square yellow"></div></td> -->
+              <!-- </tr> -->
+            </table>
+            </center>
+          </td>
         </tr>
         <tr>
-          <td><input type="button" id="clear" value="Clear" class="clearBtn"></td>
+          <td><input type="button" id="clear" value="Clear" class="menuBtn"></td>
+        </tr>
+        <tr>
+          <td><a id="save" class="menuBtn" href="#" >Save</a> </td>
         </tr>
         <!--
         <tr>
@@ -33,12 +60,14 @@
         -->
       </table>
     </div>
+    
     <!-- drawing area -->
-    <div id="paint">
-      <canvas id="myCanvas" style="border:1px solid #000000;"/>
-    </div>
-    <script src="canvas.js"></script>
-    <script src="events.js"></script>
+    <div><canvas id="myCanvas" class="canvas"/></div>
+</div>
+ 
+    <script src="Canvas.js"></script>
+    <script src="Events.js"></script>
+    <script src="ClearModalEvents.js"></script>
     <script>
       var canvas = initCanvas();
       var ctx = initCanvasContext(canvas);
