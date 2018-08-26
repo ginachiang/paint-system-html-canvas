@@ -34,9 +34,14 @@ function initStrokeColor(color) {
   ctx.strokeStyle = colorSelected;
 }
 
+function initStrokeThickness() {
+  var ctx = canvas.getContext('2d');
+  ctx.lineWidth = strokeThickness;
+}
+
 function initCanvasContext(canvas) {
   var ctx = canvas.getContext('2d');
-  ctx.lineWidth = 1;
+  ctx.lineWidth = strokeThickness;
   ctx.fillStyle = "#FFFFFF";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.lineJoin = 'bevel'; // {'miter', 'round', or 'bevel'}

@@ -1,11 +1,18 @@
 var mouse = {x: 0, y: 0};
 var colorSelected = "black";
+var strokeThickness = 5;
+
 var colorList = [document.getElementById('black'),
                  document.getElementById('blue'),
                  document.getElementById('#ff00ff'),
                  document.getElementById('#008000'),
                  document.getElementById('red'),
-                 document.getElementById('yellow')
+                 document.getElementById('yellow'),
+                 
+                 document.getElementById('#00FFFF'),
+                 document.getElementById('#FFB6C1'),
+                 document.getElementById('#FFA500'),
+                 document.getElementById('#C0C0C0'),
                 ];
 
 document.getElementById('colorTable').addEventListener('click', function(ev) {
@@ -16,6 +23,13 @@ document.getElementById('colorTable').addEventListener('click', function(ev) {
     }
   }
 }, false);
+
+var strokeSizeTextfield = document.getElementById('strokeSize');
+strokeSizeTextfield.addEventListener('click', function(ev) {
+  strokeThickness = parseInt(strokeSizeTextfield.value);
+  initStrokeThickness();
+}, false);
+
 
 document.getElementById('clear').addEventListener('click', function() {
   openModal();

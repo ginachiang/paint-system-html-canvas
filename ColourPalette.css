@@ -37,3 +37,19 @@ td {
 .square.yellow {
   background-color: yellow;
 }
+
+.square.cyan {
+  background-color: #00FFFF;
+}
+
+.square.lightPink {
+  background-color: #FFB6C1;
+}
+
+.square.orange {
+  background-color: #FFA500;
+}
+
+.square.silver {
+  background-color: #C0C0C0;
+}
